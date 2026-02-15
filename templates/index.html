@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Calculator</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="A modern, scientific calculator with history tracking" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Calculator" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="calculator" aria-label="Calculator">
+        <header class="calc-header">
+          <div class="brand">MODERN</div>
+          <div class="header-actions">
+            <div class="status">BASIC OPS</div>
+            <button class="install-btn" id="installBtn" aria-label="Install app" style="display: none;">
+              INSTALL
+            </button>
+            <button class="history-toggle" id="historyToggle" aria-label="Toggle history">
+              HISTORY
+            </button>
+            <button class="sci-toggle" id="sciToggle" aria-label="Toggle scientific mode">
+              SCI
+            </button>
+            <button class="theme-toggle" id="themeToggle" data-action="theme" aria-label="Toggle theme">
+              LIGHT
+            </button>
+          </div>
+        </header>
+
+        <div class="display" role="status" aria-live="polite">
+          <div class="display-prev" id="displayPrev"></div>
+          <div class="display-main" id="displayMain">0</div>
+        </div>
+
+        <div class="keys-wrap" aria-label="Calculator keys">
+          <div class="keys keys-advanced" id="advancedKeys" role="group" aria-label="Scientific keys">
+            <button class="key key-fn" data-action="mc">MC</button>
+            <button class="key key-fn" data-action="mr">MR</button>
+            <button class="key key-fn" data-action="mplus">M+</button>
+            <button class="key key-fn" data-action="mminus">M-</button>
+            <button class="key key-op" data-value="^">x^y</button>
+
+            <button class="key" data-action="func" data-fn="sin">sin</button>
+            <button class="key" data-action="func" data-fn="cos">cos</button>
+            <button class="key" data-action="func" data-fn="tan">tan</button>
+            <button class="key" data-action="func" data-fn="log">log</button>
+            <button class="key" data-action="func" data-fn="ln">ln</button>
+
+            <button class="key" data-action="func" data-fn="sqrt">sqrt</button>
+            <button class="key" data-value="(">(</button>
+            <button class="key" data-value=")">)</button>
+            <button class="key" data-value="pi">pi</button>
+            <button class="key" data-value="e">e</button>
+          </div>
+
+          <div class="keys" role="group" aria-label="Basic keys">
+            <button class="key key-fn" data-action="clear">C</button>
+            <button class="key key-fn" data-action="back">DEL</button>
+            <button class="key key-op" data-value="/">/</button>
+            <button class="key key-op" data-value="*">*</button>
+
+            <button class="key" data-value="7">7</button>
+            <button class="key" data-value="8">8</button>
+            <button class="key" data-value="9">9</button>
+            <button class="key key-op" data-value="-">-</button>
+
+            <button class="key" data-value="4">4</button>
+            <button class="key" data-value="5">5</button>
+            <button class="key" data-value="6">6</button>
+            <button class="key key-op" data-value="+">+</button>
+
+            <button class="key" data-value="1">1</button>
+            <button class="key" data-value="2">2</button>
+            <button class="key" data-value="3">3</button>
+            <button class="key key-eq" data-action="equals">=</button>
+
+            <button class="key key-zero" data-value="0">0</button>
+            <button class="key" data-value=".">.</button>
+          </div>
+        </div>
+
+        <aside class="history-drawer" id="historyDrawer" aria-label="History drawer">
+          <div class="history-header">
+            <span>History</span>
+            <button class="history-close" id="historyClose" aria-label="Close history">×</button>
+          </div>
+          <div class="history-list" id="history"></div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@12.4.2/lib/browser/math.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then((registration) => {
+              console.log('ServiceWorker registered:', registration.scope);
+            })
+            .catch((error) => {
+              console.log('ServiceWorker registration failed:', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
