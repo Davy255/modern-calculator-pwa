@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="115" fill="#0f172a"/>
+  <rect x="60" y="60" width="392" height="392" rx="50" fill="#1e293b"/>
+  <rect x="90" y="90" width="332" height="120" rx="20" fill="#111827"/>
+  <text x="400" y="180" font-family="Arial, sans-serif" font-size="60" font-weight="700" fill="#f8fafc" text-anchor="end">0</text>
+  
+  <!-- Buttons -->
+  <rect x="90" y="240" width="70" height="50" rx="10" fill="#111827"/>
+  <rect x="175" y="240" width="70" height="50" rx="10" fill="#111827"/>
+  <rect x="260" y="240" width="70" height="50" rx="10" fill="#111827"/>
+  <rect x="345" y="240" width="70" height="50" rx="10" fill="#f97316"/>
+  
+  <rect x="90" y="305" width="70" height="50" rx="10" fill="#111827"/>
+  <rect x="175" y="305" width="70" height="50" rx="10" fill="#111827"/>
+  <rect x="260" y="305" width="70" height="50" rx="10" fill="#111827"/>
+  <rect x="345" y="305" width="70" height="50" rx="10" fill="#f97316"/>
+  
+  <rect x="90" y="370" width="70" height="50" rx="10" fill="#111827"/>
+  <rect x="175" y="370" width="70" height="50" rx="10" fill="#111827"/>
+  <rect x="260" y="370" width="70" height="50" rx="10" fill="#111827"/>
+  <rect x="345" y="370" width="70" height="50" rx="10" fill="#f97316"/>
+  
+  <!-- Numbers -->
+  <text x="125" y="275" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#f8fafc" text-anchor="middle">7</text>
+  <text x="210" y="275" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#f8fafc" text-anchor="middle">8</text>
+  <text x="295" y="275" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#f8fafc" text-anchor="middle">9</text>
+  <text x="380" y="275" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#0f172a" text-anchor="middle">÷</text>
+  
+  <text x="125" y="340" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#f8fafc" text-anchor="middle">4</text>
+  <text x="210" y="340" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#f8fafc" text-anchor="middle">5</text>
+  <text x="295" y="340" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#f8fafc" text-anchor="middle">6</text>
+  <text x="380" y="340" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#0f172a" text-anchor="middle">×</text>
+  
+  <text x="125" y="405" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#f8fafc" text-anchor="middle">1</text>
+  <text x="210" y="405" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#f8fafc" text-anchor="middle">2</text>
+  <text x="295" y="405" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#f8fafc" text-anchor="middle">3</text>
+  <text x="380" y="405" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#0f172a" text-anchor="middle">-</text>
+</svg>
